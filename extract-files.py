@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+from aw8697_waveform_fixup import fixup_aw8697_waveform
+
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -17,6 +19,11 @@ from extract_utils.main import (
 )
 
 blob_fixups: blob_fixups_user_type = {
+    (
+        'vendor/etc/vibrator/primitive_effect_1.bin',
+        'vendor/etc/vibrator/primitive_effect_2.bin',
+        'vendor/etc/vibrator/primitive_effect_7.bin',
+    ): blob_fixup().call(fixup_aw8697_waveform, need_tmp_dir=False),
     'vendor/etc/init/init.batterysecret.rc': blob_fixup()
         .regex_replace('.*seclabel u:r:batterysecret:s0\n', ''),
     'vendor/etc/libnfc-nci.conf': blob_fixup()
