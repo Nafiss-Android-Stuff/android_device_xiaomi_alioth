@@ -28,3 +28,22 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=google/mustang_beta/mustang:CANARY/ZP11.260515.009/15513807:user/release-keys
+
+# Lunch banner maintainer variable
+RISING_MAINTAINER="𝙽𝚊𝚏𝚒𝚜"
+
+# Chipset/Maintainer properties (ro.rising.chipset/ro.rising.maintainer) 
+# Set RISING_MAINTAINER for version control 
+# (Optional if builder is setting properties via init_<device>.cpp)
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Snapdragon™ 870 5G" \
+    RisingMaintainer="𝙽𝚊𝚏𝚒𝚜"
+
+RISING_MAINTAINER := 𝙽𝚊𝚏𝚒𝚜
+
+# Disable/enable blur support, false by default
+TARGET_ENABLE_BLUR := true
+
+#Gapps
+WITH_GMS := true
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
