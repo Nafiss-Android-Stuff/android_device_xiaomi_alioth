@@ -19,6 +19,7 @@ TARGET_INCLUDES_MIUI_CAMERA := true
 TARGET_BOOT_ANIMATION_RES := 1080
 HERTZIFY_BUILD_TYPE := UNOFFICIAL
 HERTZIFY_MAINTAINER := 𝙽𝚊𝚏𝚒𝚜
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 # Inherit from alioth device
 $(call inherit-product, device/xiaomi/alioth/device.mk)
